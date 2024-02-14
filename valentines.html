@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine?</title>
+    <style>
+        body {
+            background-color: #ff99cc; /* light pink */
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #content {
+            text-align: center;
+            transition: opacity 1s ease;
+            background-color: transparent; /* Set the background to transparent */
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: #bf0040; /* dark pink */
+        }
+
+        button {
+            padding: 12px 24px;
+            font-size: 20px;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            margin: 10px;
+            width: 120px;
+            background-color: #bf0040; /* dark pink */
+        }
+
+        button:hover {
+            background-color: #ff1a75; /* brighter pink */
+            transform: scale(1.1);
+        }
+
+        #footer {
+            position: fixed;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            color: #333;
+            font-size: 14px;
+        }
+
+        .fade-out {
+            animation: fadeOut 2s ease forwards;
+        }
+
+        .fade-in {
+            animation: fadeIn 2s ease forwards;
+        }
+
+        @keyframes fadeOut {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        #loveMessage {
+            display: none; /* Initially hide love message */
+            font-size: 20px;
+            color: #333; /* dark gray */
+            margin-top: 50px;
+            max-width: 80%;
+            line-height: 1.5;
+        }
+
+        #lovePoem {
+            display: none; /* Initially hide love poem */
+            font-size: 20px;
+            color: #333; /* dark gray */
+            margin-top: 50px;
+            max-width: 80%;
+            line-height: 1.5;
+        }
+
+        #videoContainer {
+            display: none;
+            max-width: 560px;
+            margin: 20px auto;
+        }
+
+        #videoContainer iframe {
+            width: 100%;
+            height: 315px;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <div class="tenor-gif-embed" data-postid="11315612914336644838" data-share-method="host" data-aspect-ratio="1.23333" data-width="100%"><a href="https://tenor.com/view/eccomi-gif-11315612914336644838">Eccomi Sticker</a>from <a href="https://tenor.com/search/eccomi-stickers">Eccomi Stickers</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+        <h1>Will you be my valentine?</h1>
+        <div>
+            <button id="yesBtn" onclick="fadeOut()">Yes</button>
+            <button id="noBtn">No</button>
+            <p>Please enable autoplay for the best experience.</p>
+        </div>
+    </div>
+    <div id="lovePoem">
+        <p>My dear Robyn, your eyes, a deep ocean of blue,</p>
+        <p>In them, I find comfort, in them, I find light.</p>
+        <p>With you, every moment feels perfectly right,</p>
+        <p>Together, we shine, in love's guiding light.</p>
+        <p>Here's to us, celebrating two months together,</p>
+        <p>Your heart, my love, I'll cherish forever.</p>
+    </div>
+    <div id="loveMessage">
+        <p>Thank you, Robyn, for coming into my life.</p>
+        <p>During a time where I thought I was undeserving of love.</p>
+        <p>Theres so much I want to say,</p>
+        <p>But it can all be summed up in just 3 words;</p>
+        <p>------------------</p>
+        <p>I love you.</p>
+        <p>------------------</p>
+        <p>And for everything else I want to say? Well, I have a whole lifetime with you to say all that.</p>
+    </div>
+    <div id="videoContainer">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/Qy9LTRu89FA?si=vN_GlXIwUU6AE0ri&autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+    <div id="footer">- Made with love by Keelan -</div>
+
+    <script>
+        function fadeOut() {
+            var content = document.getElementById('content');
+            content.classList.add('fade-out');
+            setTimeout(function() {
+                content.style.display = 'none';
+                var lovePoem = document.getElementById('lovePoem');
+                lovePoem.style.display = 'block';
+                lovePoem.classList.add('fade-in');
+                setTimeout(function() {
+                    lovePoem.classList.remove('fade-in');
+                    lovePoem.classList.add('fade-out');
+                    var loveMessage = document.getElementById('loveMessage');
+                    loveMessage.style.display = 'block';
+                    loveMessage.classList.add('fade-in');
+                    var videoContainer = document.getElementById('videoContainer');
+                    videoContainer.style.display = 'block';
+                    videoContainer.classList.add('fade-in');
+                }, 10000); // Display love message after poem fades out
+            }, 1000); // Wait for 1 second before displaying love poem
+        }
+    </script>
+</body>
+</html>
